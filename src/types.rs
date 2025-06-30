@@ -33,12 +33,14 @@ pub struct MintTokenRequest {
 #[derive(Deserialize)]
 pub struct SignMessageRequest {
     pub message: String,
+    /// Base58 encoded secret key (Solana format)
     pub secret: String,
 }
 
 #[derive(Deserialize)]
 pub struct VerifyMessageRequest {
     pub message: String,
+    /// Base58 encoded signature (Solana format)
     pub signature: String,
     pub pubkey: String,
 }
@@ -88,6 +90,7 @@ pub struct MintTokenResponse {
 
 #[derive(Serialize)]
 pub struct SignMessageResponse {
+    /// Base58 encoded signature (Solana format)
     pub signature: String,
     pub public_key: String,
     pub message: String,
