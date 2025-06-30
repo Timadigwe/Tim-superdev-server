@@ -68,6 +68,7 @@ pub struct TokenMeta {
 #[derive(Serialize)]
 pub struct TokenAccountMeta {
     pub pubkey: String,
+    #[serde(rename = "isSigner")]
     pub is_signer: bool,
 }
 
